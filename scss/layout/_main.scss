@@ -1,0 +1,170 @@
+@use "../foundation/variables";
+@use "../foundation/mixin";
+
+
+.l-main-visual {
+    position: relative;
+    width: 100%;
+    height: 285px;
+    @include mixin.breakpoint(pc) {
+        height: 530px;
+    }
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+    p {
+        position: absolute;
+        top: 50%;
+        left: 2.5rem;
+        transform: translate(0,-50%);
+        font-size:3.6rem;
+        font-weight: 700;
+        color: variables.$color--white;
+        @include mixin.breakpoint(pc) {
+            margin-left: 8.6rem;
+            font-size: 4rem;
+        }
+    }
+}
+
+.l-branch-menu {
+    margin: 2rem 2rem 4rem 2rem;
+    @include mixin.breakpoint(pc) {
+        margin: 7%;
+    }
+    ul {
+        @include mixin.breakpoint(tablet) {
+            display: flex;
+            justify-content: center;
+            column-gap: 4.1rem;
+        }
+        @include mixin.breakpoint(pc) {
+            column-gap: 5%;
+        }
+        li {
+            position: relative;
+            margin-bottom: 2rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 0;
+            }
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+            h2 {
+                position: relative;
+                position: absolute;
+                top: 1rem;
+                left: 1.6rem;
+                font-family: "Roboto", sans-serif;
+                font-size:4.1rem;
+                font-weight: 700;
+                color: variables.$color--pale-gray01;
+                @include mixin.breakpoint(pc) {
+                    font-size: 8rem;
+                    line-height: 9.3rem;
+                }
+                &::after {
+                    position: absolute;
+                    content: " ";
+                    display: block;
+                    border-bottom: solid 4px variables.$color--white;
+                    bottom: -0.3rem;
+                    width: 3.4rem;
+                    @include mixin.breakpoint(pc) {
+                    bottom: -4.3rem;
+                    width: 6.3rem;
+                    }
+                }
+            }
+            .l-menu-box {
+                position: absolute;
+                bottom: 0;
+            }                
+        }
+    }
+}
+
+.l-access {
+    &__map {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 69rem;
+        background: variables.$color--black;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            object-fit: cover;
+            width: auto; /* アスペクト比を維持 */
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            opacity: 0.6;
+            @include mixin.breakpoint(tablet) {
+                width: 100%;
+            }
+        }
+        &__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            color: variables.$color--white;
+            font-weight: 700;
+            overflow: hidden;
+            padding: 4rem;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 60%;
+                background: rgba(0, 0, 0, 0.28);
+                pointer-events: none; /* 透過塗りつぶしがクリックなどのイベントをブロックしないようにする */
+                z-index: 2;
+                @include mixin.breakpoint(tablet) {
+                    display: none;
+                }
+                @include mixin.breakpoint(pc) {
+                    display: block;
+                    width: 60%;
+                    height: 100%;
+                }
+            }
+            h2 {
+                margin: 0;
+                position: relative;
+                position: absolute;
+                top: 4.2rem;
+                left: 4.2rem;
+                font-size: 3rem;
+                z-index: 3;
+                &::after {
+                    position: absolute;
+                    content: " ";
+                    display: block;
+                    border-bottom: solid 2px variables.$color--white;
+                    bottom: -0.3rem;
+                    width: 7.5rem;
+                }
+            }
+            p {
+                display: block;
+                padding: 0 4rem 5.7rem 4rem;
+                position: absolute;
+                top: 11.6rem;
+                left: 0;
+                font-size: 1.4rem;
+                line-height: 3.3rem;
+                z-index: 3; /* テキストを透過塗りつぶしの前面に配置 */
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@use "../../foundation/mixin";
+@use "../../foundation/variables";
+@use "sass:math";
+
+.p-menu-button {
+	display: inline-block;
+	cursor: pointer;
+	color: variables.$color--dark-gray;
+	font-size: 2rem;
+	font-family: "Roboto", sans-serif;
+	font-weight: 700;
+	line-height: 2.3rem;
+	background: none;
+	border: none;
+	outline: none;
+	padding: 1rem;
+	&__text {
+		position: relative;		
+		transition: all 0.3s;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 2.4rem;
+			height: 0.2rem;
+			background: variables.$color--dark-gray;
+			transition: all 0.3s;
+			opacity: 0;
+		}
+		&::before {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+		&.is-open {
+			color: transparent;
+			&::before,
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+	@include mixin.breakpoint(pc) {
+		display: none;
+	}
+}
+
+body.is-open {
+	position: fixed;
+	@include mixin.breakpoint(pc) {
+		position: static;
+	}
+}

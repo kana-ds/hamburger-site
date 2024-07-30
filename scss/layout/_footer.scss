@@ -1,0 +1,36 @@
+@use "../foundation/variables";
+@use "../foundation/mixin";
+
+.l-footer { 
+    position: fixed;
+    bottom: 0;
+    position: relative;  
+    font-weight: 400;
+    color: variables.$color--white;
+    img {
+        object-fit: cover;
+        height: 150px;
+    }
+    &__menu {
+        position: absolute;
+        top: 1.6rem;
+        left: 50%;
+        transform: translate(-50%,0);
+        font-size:1.8rem;
+        display: flex;
+        white-space: nowrap;
+        li {
+            display: inline-block;
+            &:not(:first-child)::before {
+                content: "｜";
+            }
+        }
+    }
+    &__copyright {
+        position: absolute;
+        bottom: 1.6rem;
+        left: 50%;
+        transform: translate(-50%,0);
+        font-size:1.4rem;
+    }
+}

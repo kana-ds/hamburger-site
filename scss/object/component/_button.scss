@@ -1,0 +1,11 @@
+@use "../../foundation/mixin";
+@use "../../foundation/variables";
+
+.c-button {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    color: variables.$color--dark-gray;
+    border: 1px solid variables.$color--dark-gray;
+    border-radius: 10px;
+    background-image: linear-gradient(135deg, variables.$color--medium-gray, variables.$color--pale-gray);
+}
