@@ -297,13 +297,24 @@ img {
   font-size: 3rem;
   line-height: 4.5rem;
 }
+@media (min-width: 1280px) {
+  .l-access__text__wrap h3 {
+    font-size: 3.6rem;
+    line-height: 5.3rem;
+  }
+}
 .l-access__text__wrap h3::after {
   position: absolute;
   content: " ";
   display: block;
   border-bottom: solid 2px #fff;
-  bottom: -0.3rem;
+  bottom: -1.5rem;
   width: 7.5rem;
+}
+@media (min-width: 1280px) {
+  .l-access__text__wrap h3::after {
+    bottom: -5rem;
+  }
 }
 .l-access__text__wrap p {
   margin-top: 2.9rem;
@@ -311,6 +322,18 @@ img {
   line-height: 3.3rem;
   overflow: hidden;
   max-height: 52.8rem;
+}
+@media (min-width: 768px) {
+  .l-access__text__wrap p {
+    max-height: 26.4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .l-access__text__wrap p {
+    margin-top: 11rem;
+    font-size: 1.6rem;
+    max-height: 33rem;
+  }
 }
 
 .l-sidebar {
@@ -461,50 +484,6 @@ img {
   }
 }
 
-.l-container {
-  display: grid;
-  width: 100%;
-  grid-template-rows: 217px auto 150px;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 1280px) {
-  .l-container {
-    grid-template-columns: 4fr 1fr;
-  }
-}
-
-.l-header {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.l-main {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.l-sidebar {
-  grid-column: 1;
-}
-@media (min-width: 1280px) {
-  .l-sidebar {
-    display: block;
-    grid-column: 2;
-    grid-row: 1/3;
-  }
-}
-
-.l-footer {
-  grid-column: 1;
-  grid-row: 3;
-}
-@media (min-width: 1280px) {
-  .l-footer {
-    grid-column: 1/3;
-    grid-row: 3;
-  }
-}
-
 .c-button {
   font-family: "M PLUS 1p", sans-serif;
   font-weight: 700;
@@ -518,6 +497,50 @@ img {
   border: 1px solid #707070;
   border-radius: 10px;
   background: #fff;
+}
+
+.c-container {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 217px auto 150px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1280px) {
+  .c-container {
+    grid-template-columns: 4fr 1fr;
+  }
+}
+
+.c-header {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.c-main {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.c-sidebar {
+  grid-column: 1;
+}
+@media (min-width: 1280px) {
+  .c-sidebar {
+    display: block;
+    grid-column: 2;
+    grid-row: 1/3;
+  }
+}
+
+.c-footer {
+  grid-column: 1;
+  grid-row: 3;
+}
+@media (min-width: 1280px) {
+  .c-footer {
+    grid-column: 1/3;
+    grid-row: 3;
+  }
 }
 
 .p-menu-button {
@@ -599,14 +622,15 @@ body.is-open {
   right: 0;
   overflow-y: auto;
   transform: translateX(100%);
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   transition-delay: 1ms;
   background: #000000;
-  opacity: 0.5;
+  opacity: 0;
   z-index: 100;
 }
 .p-overlay.is-open {
   transform: translateX(0);
+  opacity: 0.5;
 }
 
 .p-information-box dl {
