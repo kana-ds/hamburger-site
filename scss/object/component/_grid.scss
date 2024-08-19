@@ -1,6 +1,6 @@
-@use "../foundation/mixin";
+@use "../../foundation/mixin";
 
-.l-container {
+.c-container {
     display: grid;
     width: 100%;
     grid-template-rows: 217px auto 150px;
@@ -10,17 +10,17 @@
     }    
 }
 
-.l-header {
+.c-header {
     grid-column: 1;
     grid-row: 1;
 }
 
-.l-main {
+.c-main {
     grid-column: 1;
     grid-row: 2;
 }
 
-.l-sidebar {
+.c-sidebar {
     grid-column: 1;
     @include mixin.breakpoint(pc) {
         display: block;
@@ -29,7 +29,7 @@
     }
 }
 
-.l-footer {
+.c-footer {
     grid-column: 1;
     grid-row: 3;
     @include mixin.breakpoint(pc) {

@@ -29,10 +29,6 @@
 // フッター
 @forward "layout/footer"; 
 
-// グリッド
-@forward "layout/grid";
-
-
 // objectフォルダ
 // componentフォルダ
 // ボタン
@@ -40,6 +36,9 @@
 
 // フォーム
 @forward "object/component/form";
+
+// グリッド
+@forward "object/component/grid";
 
 // projectフォルダ
 // ハンバーガーメニューボタン
