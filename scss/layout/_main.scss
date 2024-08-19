@@ -14,7 +14,7 @@
         height: 100%;
         width: 100%;
     }
-    p {
+    h2 {
         position: absolute;
         top: 50%;
         left: 2.5rem;
@@ -30,7 +30,10 @@
 }
 
 .l-branch-menu {
-    margin: 2rem 2rem 4rem 2rem;
+    margin: 2rem 2rem 5rem 2rem;
+    @include mixin.breakpoint(tablet) {
+        margin: 4rem;
+    }
     @include mixin.breakpoint(pc) {
         margin: 7%;
     }
@@ -41,7 +44,7 @@
             column-gap: 4.1rem;
         }
         @include mixin.breakpoint(pc) {
-            column-gap: 5%;
+            column-gap: 6%;
         }
         li {
             position: relative;
@@ -53,35 +56,55 @@
                 object-fit: cover;
                 width: 100%;
             }
-            h2 {
+            h3 {
                 position: relative;
                 position: absolute;
-                top: 1rem;
-                left: 1.6rem;
+                top: 1.3rem;
+                left: 1.5rem;
                 font-family: "Roboto", sans-serif;
                 font-size:4.1rem;
+                line-height: 4.8rem;
                 font-weight: 700;
-                color: variables.$color--pale-gray01;
+                color: variables.$color--silver-gray;
+                @include mixin.breakpoint(tablet) {
+                    top: 1.4rem;
+                    left: 1.1rem;
+                    font-size: 4.4rem;
+                    line-height: 5.2rem;
+                }
                 @include mixin.breakpoint(pc) {
+                    top: 2.8rem;
+                    left: 2.1rem;
                     font-size: 8rem;
-                    line-height: 9.3rem;
+                    line-height: 9.4rem;
                 }
                 &::after {
                     position: absolute;
                     content: " ";
                     display: block;
                     border-bottom: solid 4px variables.$color--white;
-                    bottom: -0.3rem;
+                    bottom: -2rem;
                     width: 3.4rem;
-                    @include mixin.breakpoint(pc) {
-                    bottom: -4.3rem;
-                    width: 6.3rem;
+                    @include mixin.breakpoint(tablet) {
+                        bottom: -3rem;
+                        width: 3.6rem;
                     }
+                    @include mixin.breakpoint(pc) {
+                        bottom: -4rem;
+                        width: 6.3rem;
+                    }
+                }
+                span {
+                    color: variables.$color--white;
                 }
             }
             .l-menu-box {
                 position: absolute;
                 bottom: 0;
+                dd {
+                    max-height: 9.6rem;
+                    overflow: hidden;
+                }
             }                
         }
     }
@@ -92,17 +115,23 @@
         position: relative;
         width: 100%;
         height: auto;
-        min-height: 69rem;
+        min-height: 30rem;
         background: variables.$color--black;
+        padding: 4.2rem 4rem 5.7rem 4rem;
+        @include mixin.breakpoint(tablet) {
+            padding: 4.2rem 2.9rem 4rem 4.2rem;
+        }
+        @include mixin.breakpoint(pc) {
+            padding: 8.6rem 47% 7.5rem 7.6%;
+        }
         img {
             position: absolute;
             top: 50%;
             left: 50%;
+            width: 100%;
             height: 100%;
             object-fit: cover;
-            width: auto; /* アスペクト比を維持 */
             transform: translate(-50%, -50%);
-            z-index: 1;
             opacity: 0.6;
             @include mixin.breakpoint(tablet) {
                 width: 100%;
@@ -115,10 +144,7 @@
             width: 100%;
             height: 100%;
             justify-content: center;
-            color: variables.$color--white;
-            font-weight: 700;
-            overflow: hidden;
-            padding: 4rem;
+            z-index: 1;
             &::before {
                 content: "";
                 position: absolute;
@@ -138,33 +164,35 @@
                     height: 100%;
                 }
             }
-            h2 {
-                margin: 0;
-                position: relative;
+        }
+    }
+    &__text__wrap {
+        color: variables.$color--white;
+        font-weight: 700;
+        overflow: hidden;
+        height: auto;
+        position: relative;
+        z-index: 3; 
+        h3 {
+            margin: 0;
+            position: relative;
+            font-size: 3rem;
+            line-height: 4.5rem;
+            &::after {
                 position: absolute;
-                top: 4.2rem;
-                left: 4.2rem;
-                font-size: 3rem;
-                z-index: 3;
-                &::after {
-                    position: absolute;
-                    content: " ";
-                    display: block;
-                    border-bottom: solid 2px variables.$color--white;
-                    bottom: -0.3rem;
-                    width: 7.5rem;
-                }
-            }
-            p {
+                content: " ";
                 display: block;
-                padding: 0 4rem 5.7rem 4rem;
-                position: absolute;
-                top: 11.6rem;
-                left: 0;
-                font-size: 1.4rem;
-                line-height: 3.3rem;
-                z-index: 3; /* テキストを透過塗りつぶしの前面に配置 */
+                border-bottom: solid 2px variables.$color--white;
+                bottom: -0.3rem;
+                width: 7.5rem;
             }
+        }
+        p {
+            margin-top: 2.9rem;
+            font-size: 1.4rem;
+            line-height: 3.3rem;
+            overflow: hidden;
+            max-height: calc(3.3rem * 16);
         }
     }
 }

@@ -19,6 +19,15 @@
         font-size:1.8rem;
         display: flex;
         white-space: nowrap;
+        @include mixin.breakpoint(tablet) {
+            top: 3rem;
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+        @include mixin.breakpoint(pc) {
+            top: 4.1rem;
+            font-size:2.3rem;
+        }
         li {
             display: inline-block;
             &:not(:first-child)::before {
@@ -32,5 +41,12 @@
         left: 50%;
         transform: translate(-50%,0);
         font-size:1.4rem;
+        line-height: 2.1rem;
+        @include mixin.breakpoint(tablet) {
+            bottom: 2.4rem;
+        }
+        @include mixin.breakpoint(pc) {
+            bottom: 2.7rem;
+        }
     }
 }

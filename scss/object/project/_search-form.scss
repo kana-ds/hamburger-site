@@ -9,25 +9,33 @@
         display: flex;
         &__icon {
             position: absolute;
-            top: 25%;
-            transform: translate(3rem, 0);
-            width: 2rem;
-            height: 2rem;
-            border: 2px solid variables.$color--dark-gray01;
-            border-radius: 50%;
-            margin-right: 5px;
-            position: relative;
-            box-sizing: border-box;
+            top: 50%;
+            left: 0.5rem; /* アイコンの左端からの距離を調整 */
+            transform: translateY(-50%);
+            width: 2.4rem; /* アイコンのサイズ */
+            height: 2.4rem;
+            border: none;
+            cursor: pointer;
+            &::before {
+                content: '';
+                position: absolute;
+                width: 2rem; /* レンズの直径 */
+                height: 2rem; /* レンズの直径 */
+                border: 2px solid variables.$color--ash-gray;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
             &::after {
                 content: '';
                 position: absolute;
-                top: calc(50% + 8px);
-                left: calc(50% + 10px);
-                width: 8px;
-                height: 2px;
-                background-color: variables.$color--dark-gray01;
-                transform: translate(-50%, -50%) rotate(45deg);
-                transform-origin: 0 0;
+                width: 1rem; /* 棒の長さ */
+                border: 1px solid variables.$color--ash-gray;
+                top: 75%;
+                left: 75%;
+                transform: rotate(45deg);
+                transform-origin: top left;
             }
         }
     }
@@ -47,6 +55,7 @@
         width: 9rem;
         height: 4.6rem;
         transition: all 0.3s ease;
+        cursor: pointer;
         @include mixin.breakpoint(tablet) {
             width: 13.6rem;
         }

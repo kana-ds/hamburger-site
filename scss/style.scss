@@ -41,9 +41,6 @@
 // フォーム
 @forward "object/component/form";
 
-// 見出し
-@forward "object/component/headline";
-
 // projectフォルダ
 // ハンバーガーメニューボタン
 @forward "object/project/menu-button";
@@ -59,19 +56,4 @@
 
 // サーチフォーム
 @forward "object/project/search-form";
-
-// フロント
-@forward "object/project/front-page";
-
-// アーカイブ
-@forward "object/project/archive";
-
-// アーカイブサーチ
-@forward "object/project/archive-search";
-
-// シングルページ
-@forward "object/project/single";
-
-// ページ
-@forward "object/project/page";
 
