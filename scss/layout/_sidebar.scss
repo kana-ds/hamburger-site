@@ -9,7 +9,7 @@
     right: 0;
     overflow-y: auto;
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    transition: transform 300ms ease-out;
     z-index: 1000;
     background: variables.$color--pale-gray;
     @include mixin.breakpoint(tablet) {
@@ -24,6 +24,7 @@
     }
     &.is-open {
         transform: translateX(0);
+        transition-delay: 0.5s;
     }
     &__nav {
         margin-top: 17.8rem;

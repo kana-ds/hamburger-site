@@ -8,7 +8,7 @@ jQuery(function($) {
         $(".p-menu-button__text").toggleClass("is-open");
         menu.toggleClass("is-open");
         $("body").toggleClass("is-open");
-        overlay.toggleClass("is-open");
+        overlay.addClass("is-open");
     });
 
     // pcサイズ時に広げた時に.is-openを削除
