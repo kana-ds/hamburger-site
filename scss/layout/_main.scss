@@ -47,10 +47,7 @@
             column-gap: 6%;
         }
         li {
-            display: flex;
-            flex-direction: column;
             flex: 1;
-            margin-bottom: 2rem;
             @include mixin.breakpoint(tablet) {
                 margin-bottom: 0;
             }
@@ -59,15 +56,28 @@
 }
 
 .l-branch-menu__wrap {
-    display: flex;
-    flex-direction: column;
     position: relative;
     box-sizing: border-box;
-    height: auto;
-    img {
-        object-fit: cover;
-        width: auto;
-        height: auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 100%;
+    min-height: 64rem;
+    background-size: cover;
+    height: 100%;
+    @include mixin.breakpoint(tablet) {
+        margin-top: 0;
+        min-height: auto;
+    }
+    @include mixin.breakpoint(pc) {
+        padding-top: 84.2rem;
+    }
+    &.branch-menu__img01 {
+        background-image: url(../../images/branch-menu_img01.jpg);
+    }
+    &.branch-menu__img02 {
+        background-image: url(../../images/branch-menu_img02.jpg);
     }
     h3 {
         position: relative;
@@ -111,10 +121,6 @@
             color: variables.$color--white;
         }
     } 
-    .l-menu-box {
-        position: absolute;
-        bottom: 0;
-    }
 }
 
 .l-access {
