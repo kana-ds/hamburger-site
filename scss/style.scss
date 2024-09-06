@@ -44,15 +44,16 @@
 // ハンバーガーメニューボタン
 @forward "object/project/menu-button";
 
-// ハンバーガーメニューボタン
-@forward "object/project/menu-button__close";
-
 // オーバーレイ
 @forward "object/project/overlay";
 
 // 説明用ボックス
-@forward "object/project/information-box";
+@forward "object/project/box";
 
 // サーチフォーム
 @forward "object/project/search-form";
+
+// utilityフォルダ
+// グローバル
+@forward "object/utility/globals";
 

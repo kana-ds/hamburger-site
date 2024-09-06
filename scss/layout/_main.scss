@@ -57,21 +57,21 @@
 
 .l-branch-menu__wrap {
     position: relative;
-    box-sizing: border-box;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-top: 100%;
-    min-height: 64rem;
+    padding-top: 12rem;
     background-size: cover;
     height: 100%;
+    width: 100%;
+    aspect-ratio: 1 / 1.9;
     @include mixin.breakpoint(tablet) {
         margin-top: 0;
-        min-height: auto;
+        padding-top: 14rem;
     }
     @include mixin.breakpoint(pc) {
-        padding-top: 84.2rem;
+        padding-top: 22rem;
     }
     &.branch-menu__img01 {
         background-image: url(../../images/branch-menu_img01.jpg);

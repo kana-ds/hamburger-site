@@ -1,5 +1,5 @@
 jQuery(function($) {
-    var menuButton = $('.p-menu-button__close');
+    var menuButton = $('.p-menu-button--close');
     var menu = $('.l-sidebar');
     var overlay = $('.p-overlay');
 
