@@ -5,27 +5,46 @@
 .l-main-visual {
     position: relative;
     width: 100%;
-    height: 285px;
-    @include mixin.breakpoint(pc) {
-        height: 530px;
-    }
     img {
         object-fit: cover;
         height: 100%;
         width: 100%;
     }
-    h2 {
+    &__title {
         position: absolute;
         top: 50%;
         left: 2.5rem;
         transform: translate(0,-50%);
-        font-size:3.6rem;
-        font-weight: 700;
-        color: variables.$color--white;
-        @include mixin.breakpoint(pc) {
+        @include mixin.breakpoint(tablet) {
+            display: flex;
+            align-items: center;
             margin-left: 8.6rem;
-            font-size: 4rem;
         }
+        p {
+            margin-top: 1.2rem;
+            @include mixin.breakpoint(tablet) {
+                margin-left: 1.9rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+.l-main-visual--front-page {
+    height: 28.5rem;
+    @include mixin.breakpoint(pc) {
+        height: 53rem;
+    }
+}
+
+.l-main-visual--archive {
+    position: relative;
+    height: 28.5rem;
+    @include mixin.breakpoint(pc) {
+        height: 24rem;
+    }
+    img {
+        opacity: 0.5;
     }
 }
 
@@ -217,5 +236,120 @@
                 font-size: 1.6rem;
             }
         }
+    }
+}
+
+.l-content--archive {
+    width: 90%;
+    margin: 0 auto;
+    @include mixin.breakpoint(pc) {
+        width: 87%;
+    }
+}
+
+.l-content-block {
+    margin-top: 3.2rem;
+    margin-bottom: 2rem;
+    @include mixin.breakpoint(tablet) {
+        margin-top: 3.9rem;
+        margin-bottom: 3.7rem;
+    }
+    @include mixin.breakpoint(pc) {
+        margin-top: 6.3rem;
+        margin-bottom: 7rem;
+    }
+    h3 {
+        margin-bottom: 2.5rem;
+        @include mixin.breakpoint(tablet) {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.l-card {
+    width: 100%;
+    margin-bottom: 2rem;
+    @include mixin.breakpoint(pc) {
+        margin-bottom: 3rem;
+    }
+    &__text-area {
+        h3 {
+            margin-bottom: 2.1rem;
+            @include mixin.breakpoint(pc) {
+                margin-bottom: 4.4rem;
+            }
+        }
+        h4 {
+            margin-bottom: 0.7rem;
+            @include mixin.breakpoint(pc) {
+                margin-bottom: 1.3rem;
+            }
+        }
+        p {
+            margin-bottom: 4rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 4.5rem;
+            }
+            @include mixin.breakpoint(pc) {
+                margin-bottom: 6rem;
+            }
+        }
+        &__button {
+            text-align: center;
+        }
+    }
+}
+
+.l-navbar {
+    display: flex;
+    width: 90%;
+    margin: 10.5rem auto 3.2rem;
+}
+
+.l-pagination {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+    @include mixin.breakpoint(tablet) {
+        justify-content: center;
+    }
+    &__no {
+        display: none;
+        @include mixin.breakpoint(tablet) {
+            display: flex;
+            margin-right: 1.5rem;
+        }
+    }
+    &--tab {
+        display: none;
+        @include mixin.breakpoint(tablet) {
+            display: flex;
+            margin-right: 2rem;
+        }
+    }
+    &__prev {
+        img {
+            margin-right: 0.8rem;
+            @include mixin.breakpoint(tablet) {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+    &__next {
+        img {
+            margin-left: 0.8rem;
+            @include mixin.breakpoint(tablet) {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.l-pagination--sma {
+    @include mixin.breakpoint(tablet) {
+        display: none;
     }
 }

@@ -31,14 +31,21 @@
 
 // objectフォルダ
 // componentフォルダ
+
 // ボタン
 @forward "object/component/button";
 
 // フォーム
 @forward "object/component/form";
 
+// カード
+@forward "object/component/card";
+
 // グリッド
 @forward "object/component/grid";
+
+// ページネーション
+@forward "object/component/pagination";
 
 // projectフォルダ
 // ハンバーガーメニューボタン
@@ -52,6 +59,9 @@
 
 // サーチフォーム
 @forward "object/project/search-form";
+
+// フォントスタイル
+@forward "object/project/typography";
 
 // utilityフォルダ
 // グローバル

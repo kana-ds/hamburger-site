@@ -3,22 +3,21 @@
 @use "sass:math";
 
 .p-menu-button {
-	display: inline-block;
-	cursor: pointer;
-	color: variables.$color--dark-gray;
-	font-size: 2rem;
-	font-family: "Roboto", sans-serif;
-	font-weight: 700;
-	line-height: 2.3rem;
-	background: none;
-	border: none;
-	outline: none;
-	padding: 1rem;
-	@include mixin.breakpoint(tablet) {
-		font-size: 3.4rem;
-	}
-	@include mixin.breakpoint(pc) {
-		display: none;
+	&__text{
+		display: inline-block;
+		cursor: pointer;
+		color: variables.$color--dark-gray;
+		font-size: 2rem;
+		font-family: "Roboto", sans-serif;
+		font-weight: 700;
+		line-height: 2.3rem;
+		background: none;
+		@include mixin.breakpoint(tablet) {
+			font-size: 3.4rem;
+		}
+		@include mixin.breakpoint(pc) {
+			display: none;
+		}
 	}
 }
 

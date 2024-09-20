@@ -15,6 +15,9 @@
             width: 2.4rem; /* アイコンのサイズ */
             height: 2.4rem;
             border: none;
+            @include mixin.breakpoint(tablet) {
+                left: 1.3rem;
+            }
             cursor: pointer;
             &::before {
                 content: '';
@@ -49,6 +52,7 @@
         transition: all 0.3s ease;
         @include mixin.breakpoint(tablet) {
             width: 39.6rem;
+            padding-left: 4.9rem;
         }
     }
     &__submit {

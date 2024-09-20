@@ -22,24 +22,15 @@
         }
     
         h1 {
-            color: variables.$color--dark-gray;
-            font-size: 4rem;
-            font-weight: 700;
-            font-family: "Roboto", sans-serif;
-            line-height: 4.7rem;
             margin-bottom: 2rem;
             transition: all 0.3s ease;
     
             @include mixin.breakpoint(pc) {
-                font-size: 6.4rem;
-                line-height: 7.5rem;
                 margin-bottom: 0;
             }
         }
     }
 }
-
-
 
 .l-menu-button {
     position: absolute;
@@ -48,7 +39,8 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
+    @include mixin.breakpoint(tablet) {
+        top: 2rem;
+        right: 2.5rem;
+    }
 }
