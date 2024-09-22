@@ -461,10 +461,15 @@ img {
   }
 }
 .l-pagination__no {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.5s;
 }
 @media (min-width: 768px) {
   .l-pagination__no {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s 0s;
     display: flex;
     margin-right: 1.5rem;
   }
