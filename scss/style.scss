@@ -47,9 +47,21 @@
 // ページネーション
 @forward "object/component/pagination";
 
+// 画像とテキスト 
+@forward "object/component/image-block";
+
+// ギャラリー
+@forward "object/component/gallery";
+
+// テーブル
+@forward "object/component/table";
+
+// リスト
+@forward "object/component/list";
+
 // projectフォルダ
-// ハンバーガーメニューボタン
-@forward "object/project/menu-button";
+// ボタン
+@forward "object/project/button";
 
 // オーバーレイ
 @forward "object/project/overlay";
@@ -60,10 +72,12 @@
 // サーチフォーム
 @forward "object/project/search-form";
 
+// 引用
+@forward "object/project/blockquote";
+
 // フォントスタイル
 @forward "object/project/typography";
 
 // utilityフォルダ
 // グローバル
 @forward "object/utility/globals";
-
